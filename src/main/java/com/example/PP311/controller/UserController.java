@@ -4,10 +4,7 @@ import com.example.PP311.model.User;
 import com.example.PP311.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class UserController {
@@ -47,7 +44,7 @@ public class UserController {
         return "redirect:/users";
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/users/{id}")
     public String deleteUser(@PathVariable long id) {
         userService.deleteUser(id);
         return "redirect:/users";

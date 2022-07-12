@@ -23,8 +23,12 @@
             <td th:text="${user.getName}"></td>
             <td th:text="${user.getLastName}"></td>
             <td th:text="${user.isClient}"></td>
-            <td><a th:href="@{/update/{id}(id=${user.id})}">Edit</a></td>
-            <td><a th:href="@{/delete/{id}(id=${user.id})}">Delete</a></td>
+            <td><button th:href="@{/update/{id}(id=${user.id})}">Edit</button></td>
+            <td>
+                <form th:method="DELETE" th:action="@{/users/{id}(id=${user.getId()})}">
+                    <input type="submit" value="Delete"/>
+                </form>
+            </td>
         </tr>
         </tbody>
     </table>
